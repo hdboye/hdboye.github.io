@@ -105,7 +105,7 @@ class SingleGamepad {
     }
     
     rumble(s,w,t,i) {
-        var gamepad = this.gamepads[i];
+        var gamepad = this.gamepads[i-1];
         console.log(this.gamepads[i]);
         console.log(this.gamepads[i-1]);
         if(gamepad.vibrationActuator != null){
