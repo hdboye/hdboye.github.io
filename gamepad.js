@@ -105,13 +105,17 @@ class SingleGamepad {
     }
     
     rumble(s,w,t,i) {
-        var gamepad = navigator.getGamepads()[i];
-        // we just deadass force it to do it, it'll only error if it don't work so no worries
-        gamepad.vibrationActuator.playEffect("dual-rumble", {
-                duration: 1000*t,
-                strongMagnitude: Math.max(0,Math.min(s,1)),
-                weakMagnitude: Math.max(0,Math.min(w,1))
-            });
+        var gamepad = this.gamepads[i];
+        console.log(this.gamepads[i]);
+        console.log(this.gamepads[i-1]);
+        if(gamepad && gamepad.vibrationActuator){
+            console.log("yeah dey exist");
+            gamepad.vibrationActuator.playEffect("dual-rumble", {
+                    duration: 1000*t,
+                    strongMagnitude: Math.max(0,Math.min(s,1)),
+                    weakMagnitude: Math.max(0,Math.min(w,1))
+                });
+        }
     }
 }
 
