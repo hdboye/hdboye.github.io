@@ -108,7 +108,7 @@ class SingleGamepad {
         var gamepad = this.gamepads[i];
         console.log(this.gamepads[i]);
         console.log(this.gamepads[i-1]);
-        if(gamepad && gamepad.vibrationActuator){
+        if(gamepad.vibrationActuator != null){
             console.log("yeah dey exist");
             gamepad.vibrationActuator.playEffect("dual-rumble", {
                     duration: 1000*t,
